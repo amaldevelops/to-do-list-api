@@ -40,6 +40,73 @@ This project showcases RESTful API design, database integration, and a responsiv
 | **Language** | TypeScript        | Provides type safety and improves maintainability                    |
 | **Tooling**  | ESLint, Prettier  | Ensures clean code and consistent formatting                         |
 
+# 🔌 API Endpoints
+
+| Method   | Endpoint     | Description                              |
+| -------- | ------------ | ---------------------------------------- |
+| `GET`    | `/tasks`     | Fetch all tasks                          |
+| `POST`   | `/tasks`     | Create a new task                        |
+| `PUT`    | `/tasks/:id` | Update task details or mark as completed |
+| `DELETE` | `/tasks/:id` | Delete a specific task                   |
+
+### Example **POST /tasks** Request
+
+```json
+{
+  "title": "Write documentation",
+  "description": "Add setup guide and API docs",
+  "status": "Not Started"
+}
+```
+
+### Project folder structure
+
+```bash
+todo-list-app/
+├── client/ # React frontend
+│ ├── src/
+│ ├── public/
+│ └── package.json
+│
+├── server/ # Node.js + Express + Prisma backend
+│ ├── src/
+│ │ ├── index.ts
+│ │ ├── routes/
+│ │ ├── controllers/
+│ │ └── prisma/
+│ ├── prisma/
+│ │ └── schema.prisma
+│ └── package.json
+│
+└── README.md
+```
+
+### 📊 Example Task Object
+
+```json
+{
+  "id": 1,
+  "title": "Learn Prisma ORM",
+  "description": "Read documentation and try CRUD examples",
+  "status": "In Progress",
+  "createdAt": "2025-11-05T12:30:00.000Z"
+}
+```
+
+### 🔮 Future Enhancements
+
+✅ User authentication (JWT)
+
+🕒 Task deadlines and reminders
+
+📱 Mobile-friendly layout
+
+☁️ Cloud deployment (Render, Railway, or Vercel)
+
+🔍 Search and sorting capabilities
+
+📊 Task activity tracking
+
 ## ⚙️ Setup Instructions
 
 ### 1. Clone the Repository
