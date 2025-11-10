@@ -11,7 +11,8 @@ async function controllerMainRoute(req, res, next) {
 // GET /tasks Returns a list of tasks.
 async function controllerGetAllTasks(req, res, next) {
   try {
-    console.log("All Taskss Get Route Reached");
+    console.log("All Tasks Get Route Reached");
+    res.json([{ allTasks: "All Tasks" }]);
   } catch (error) {
     console.error(error);
     res.json([{ error: "Error retrieving all tasks" }]);
