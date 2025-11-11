@@ -1,33 +1,40 @@
-import "dotenv/config"; // ensures DATABASE_URL is loaded
-import pkg from "@prisma/client";
-const { PrismaClient } = pkg;
+import "dotenv/config"; // load DATABASE_URL
+
+import { PrismaClient } from "./prisma/generated/client.ts";
+import "dotenv/config";
 
 const prisma = new PrismaClient();
 
 // fetches all tasks
-async function main() {
-  const tasks = await prisma.task.findMany();
-  console.log("All tasks:", tasks);
+async function getAllTasks() {
+  return await prisma.task.findMany();
 }
 
-// Fetch a single task by ID
-const task = await prisma.task.findUnique({
-  where: { task_id: 1 },
-});
-console.log("Task with ID 1:", task);
+// fetch a single task by ID
+async function getTaskById(id) {
+  return await prisma.task.findUnique({
+    where: { task_id: id },
+  });
+}
 
-//Filter tasks
-const notStartedTasks = await prisma.task.findMany({
-  where: { task_status: "not_started" },
-});
-console.log("Not started tasks:", notStartedTasks);
+// fetch tasks with a specific status
+async function getTasksByStatus(status) {
+  return await prisma.task.findMany({
+    where: { task_status: status },
+  });
+}
 
-// Sort tasks
-const sortedTasks = await prisma.task.findMany({
-  orderBy: { created_at: "desc" },
-});
-console.log("Tasks sorted by creation date:", sortedTasks);
+// fetch tasks sorted by creation date
+async function getTasksSortedByCreation() {
+  return await prisma.task.findMany({
+    orderBy: { created_at: "desc" },
+  });
+}
 
-main()
-  .catch((e) => console.error(e))
-  .finally(async () => await prisma.$disconnect());
+export {
+  prisma,
+  getAllTasks,
+  getTaskById,
+  getTasksByStatus,
+  getTasksSortedByCreation,
+};

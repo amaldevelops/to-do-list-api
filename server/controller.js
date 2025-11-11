@@ -1,7 +1,10 @@
+import { getAllTasks } from "./database-queries.js";
+
 async function controllerMainRoute(req, res, next) {
   try {
     console.log("Main Route Reached");
-    res.json([{ Welcome: "Welcome to To do list Api" }]);
+
+    res.json([{ Welcome: "Task List Api" }]);
   } catch (error) {
     console.error(error);
     res.json(error);
@@ -12,7 +15,8 @@ async function controllerMainRoute(req, res, next) {
 async function controllerGetAllTasks(req, res, next) {
   try {
     console.log("All Tasks Get Route Reached");
-    res.json([{ allTasks: "All Tasks" }]);
+    const response = await getAllTasks();
+    res.json([{ allTasks: response }]);
   } catch (error) {
     console.error(error);
     res.json([{ error: "Error retrieving all tasks" }]);
