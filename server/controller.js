@@ -55,11 +55,33 @@ async function controllerGetAllTasks(req, res, next) {
 // POST /tasks Adds a new task.
 async function controllerPostTasks(req, res, next) {
   try {
-    console.log("Create New task route reached");
-    const response = await res.json([{ createTask: "Create Task" }]);
+    console.log("Create New Task route reached");
+
+    const { task_title, task_description, task_owner, task_status } = req.body;
+
+    // Simple validation
+    if (!task_title || !task_owner) {
+      return res
+        .status(400)
+        .json({ error: "task_title and task_owner are required" });
+    }
+
+    // Create the task
+    const newTask = await createTask({
+      task_title,
+      task_description,
+      task_status,
+      task_owner,
+    });
+
+    // Respond with created task
+    res.status(201).json({
+      message: "Task created successfully",
+      task: newTask,
+    });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Error Adding new task" });
+    console.error("❌ Error creating new task:", error);
+    res.status(500).json({ error: "Error adding new task" });
   }
 }
 

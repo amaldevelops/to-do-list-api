@@ -15,7 +15,7 @@ async function createTask(data) {
     data: {
       task_title: data.task_title,
       task_description: data.task_description || null,
-      task_status: data.task_status || "not_started", // default if not provided
+      task_status: data.task_status || "not_started", // default
       task_owner: data.task_owner,
     },
   });
