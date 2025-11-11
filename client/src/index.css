@@ -66,3 +66,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+ul {
+  list-style-type: none; /* removes default bullets */
+  padding-left: 0; /* removes default indentation */
+}
+
+/* For ordered lists */
+ol {
+  list-style-type: none; /* removes numbering */
+  padding-left: 0;
+}

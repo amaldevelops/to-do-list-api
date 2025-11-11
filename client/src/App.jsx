@@ -68,6 +68,13 @@ function App() {
         </a>
       </h3>
 
+      <h3>
+        PostgreSQL database:{" "}
+        <a href="https://neon.com/" target="_blank">
+          Hosted On Neon
+        </a>
+      </h3>
+
       {/* Stats Section */}
       <div className="stats">
         <h2>Task Stats</h2>
@@ -84,7 +91,7 @@ function App() {
 
       {/* Task List */}
       <div className="tasks">
-        <h1>Tasks</h1>
+        <h2>Tasks</h2>
         {loading && <p>Loading tasks...</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}
         {!loading && !error && tasks.length === 0 && <p>No tasks found</p>}
@@ -104,7 +111,6 @@ function App() {
 
       {/* Tech Stack */}
       <div>
-        <h3>Front End Tech Stack</h3>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
