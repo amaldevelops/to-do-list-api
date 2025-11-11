@@ -20,17 +20,17 @@ async function createTask(data) {
     },
   });
 }
-// Update task details or mark as completed",
 async function updateTask(task_id, data) {
+  const updateData = {};
+  if (data.task_title !== undefined) updateData.task_title = data.task_title;
+  if (data.task_description !== undefined)
+    updateData.task_description = data.task_description;
+  if (data.task_status !== undefined) updateData.task_status = data.task_status;
+  if (data.task_owner !== undefined) updateData.task_owner = data.task_owner;
+
   return await prisma.task.update({
-    where: { task_id: Number(task_id) }, // Identify which task to update
-    data: {
-      task_title: data.task_title, // Optional: update title
-      task_description: data.task_description, // Optional: update description
-      task_status: data.task_status, // Optional: update status
-      task_owner: data.task_owner, // Optional: reassign owner
-      updated_at: new Date(), // Ensures updated_at changes (redundant but explicit)
-    },
+    where: { task_id: Number(task_id) },
+    data: updateData,
   });
 }
 

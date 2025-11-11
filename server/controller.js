@@ -89,11 +89,16 @@ async function controllerPostTasks(req, res, next) {
 
 async function controllerUpdateTasks(req, res, next) {
   try {
-    console.log("Update task route reached ");
-    res.json([{ updateTask: "Update Task" }]);
+    const taskId = req.params.id; // from URL
+    const data = req.body; // JSON payload
+
+    // Call the helper that uses Prisma
+    const updatedTask = await updateTask(taskId, data);
+
+    res.json(updatedTask);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Error Updating task" });
+    console.error("Error updating task:", error);
+    res.status(500).json({ error: "Error updating task" });
   }
 }
 
