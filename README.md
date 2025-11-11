@@ -13,6 +13,10 @@ Please refer local installation instructions below on how to set it up on your l
 
 ## Live Demo
 
+- Backend is hosted on Render.com
+- PostgreSQL database is hosted on Neon.tech
+- Front End is hosted on githubpages.com
+
 ### 🏗️ Tech Stack
 
 | Layer        | Technology        | Why It’s Used                                                        |
