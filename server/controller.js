@@ -103,13 +103,25 @@ async function controllerUpdateTasks(req, res, next) {
 }
 
 //DELETE /tasks/:id Deletes a task.
-
 async function controllerDeleteTasks(req, res, next) {
   try {
-    console.log("Delete Task");
-    res.json([{ deleteTask: "Delete Task" }]);
+    const taskId = req.params.id; // get the ID from the URL
+
+    // Call the helper function that uses Prisma
+    const deletedTask = await deleteTask(taskId);
+
+    res.json({
+      message: "Task deleted successfully",
+      task: deletedTask,
+    });
   } catch (error) {
-    console.error(error);
+    console.error("Error deleting task:", error);
+
+    // Handle case where task doesn't exist
+    if (error.code === "P2025") {
+      return res.status(404).json({ error: "Task not found" });
+    }
+
     res.status(500).json({ error: "Error deleting task" });
   }
 }
