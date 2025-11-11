@@ -42,7 +42,31 @@ function App() {
 
   return (
     <>
-      <h1>To Do List Front End</h1>
+      <h1>To Do List REST based API simple Front End</h1>
+      <h3>
+        Source Code and Documentation on how to use REST based API and deploy:{" "}
+        <a
+          href="https://github.com/amaldevelops/to-do-list-api"
+          target="_blank"
+        >
+          Github
+        </a>
+      </h3>
+      <h3>
+        Back End Code:{" "}
+        <a
+          href="https://to-do-list-api-kh03.onrender.com/tasks"
+          target="_blank"
+        >
+          Hosted On Render
+        </a>
+      </h3>
+      <h3>
+        Front End:{" "}
+        <a href="https://www.amalk.au/to-do-list-api/" target="_blank">
+          Hosted On Github Pages
+        </a>
+      </h3>
 
       {/* Stats Section */}
       <div className="stats">
