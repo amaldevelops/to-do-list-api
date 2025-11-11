@@ -15,9 +15,9 @@ Please refer local installation instructions below on how to set it up on your l
 
 Please note as the demo version is hosted on free instances of the below services they will spin down with inactivity, which can delay requests by 2 minutes or more.
 
-- (https://to-do-list-api-kh03.onrender.com/) : Backend is hosted on Render.com (as output is given using JSON, this can be tested using the browser or using postman if you wish to test all the http methods) i.e. (https://to-do-list-api-kh03.onrender.com/tasks)
-- (https://neon.com/) PostgreSQL database is hosted on
-- (https://www.amalk.au/to-do-list-api/) : Front End is hosted on [githubpages.com](https://docs.github.com/en/pages):
+- [Front End Demo](https://www.amalk.au/to-do-list-api/) : Front End is hosted on [githubpages.com](https://docs.github.com/en/pages)
+- [Backend API Demo](https://to-do-list-api-kh03.onrender.com/) : Backend is hosted on Render.com (as output is given using JSON, this can be tested using the browser or using postman if you wish to test all the http methods) i.e. (https://to-do-list-api-kh03.onrender.com/tasks)
+- PostgreSQL database is hosted on (https://neon.com/)
 
 ### 🏗️ Tech Stack
 
