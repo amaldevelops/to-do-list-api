@@ -15,20 +15,20 @@ Please refer local installation instructions below on how to set it up on your l
 
 Please note as the demo version is hosted on free instances of the below services they will spin down with inactivity, which can delay requests by 2 minutes or more.
 
-- Backend is hosted on Render.com : `https://to-do-list-api-kh03.onrender.com/`
+- `https://to-do-list-api-kh03.onrender.com/` : Backend is hosted on Render.com (as output is given using JSON, this can be tested using the browser or using postman if you wish to test all the http methods) i.e. `https://to-do-list-api-kh03.onrender.com/tasks`
 - PostgreSQL database is hosted on Neon.tech
 - Front End is hosted on [githubpages.com](https://docs.github.com/en/pages): `https://www.amalk.au/to-do-list-api/`
 
 ### 🏗️ Tech Stack
 
-| Layer        | Technology        | Why It’s Used                                                        |
-| ------------ | ----------------- | -------------------------------------------------------------------- |
-| **Backend**  | Node.js + Express | Fast and minimalistic web framework ideal for REST APIs              |
-| **Database** | PostgreSQL        | Reliable, relational, and well-supported open-source database        |
-| **ORM**      | Prisma            | Type-safe database toolkit that simplifies data modeling and queries |
-| **Frontend** | React (Vite)      | Lightweight and efficient for building dynamic user interfaces       |
-| **Language** | TypeScript        | Provides type safety and improves maintainability                    |
-| **Tooling**  | ESLint, Prettier  | Ensures clean code and consistent formatting                         |
+| Layer        | Technology        | Why It’s Used                                                                                                                                                                                                    |
+| ------------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Backend**  | Node.js + Express | Node.js allows running JavaScript on the server, making it easy to share code with the frontend. Express is minimal and fast, perfect for building REST APIs with routing, middleware, and JSON handling.        |
+| **Database** | PostgreSQL        | PostgreSQL is a robust relational database that supports complex queries, relationships, and ACID compliance, ensuring data integrity. It’s open-source, widely used, and integrates well with ORMs like Prisma. |
+| **ORM**      | Prisma            | Prisma simplifies database interactions with type-safe queries, schema management, and migrations. It reduces boilerplate code and minimizes runtime errors.                                                     |
+| **Frontend** | React (Vite)      | React provides a component-based architecture for building dynamic UIs. Vite offers fast development builds and hot module replacement, making development smoother and faster.                                  |
+| **Language** | JavaScript        | Using JavaScript across frontend and backend enables a unified codebase, easy sharing of data structures, and faster development. Type checking (optional with TypeScript) further enhances reliability.         |
+| **Tooling**  | ESLint, Prettier  | ESLint enforces coding standards and catches potential errors early. Prettier ensures consistent code formatting, improving readability and maintainability across the team.                                     |
 
 ## 🧩 Backend (REST API) Information
 
@@ -50,6 +50,7 @@ This design ensures scalability, maintainability, and interoperability across di
 ### 🔌 API Endpoints
 
 API can be accessed using these endpoints
+i.e. : `https://to-do-list-api-kh03.onrender.com/tasks/7` using postman
 
 | Method   | Endpoint     | Description                              |
 | -------- | ------------ | ---------------------------------------- |
@@ -71,17 +72,8 @@ API can be accessed using these endpoints
 ### 💻 Frontend Information
 
 - Task list view displaying task ID, title, description, and status
-- Create, update, and delete tasks directly from the UI
 - Basic statistics: total tasks, completed percentage, etc.
 - Responsive, simple, and intuitive interface
-
-### 🌟 Optional Enhancements
-
-- Task filtering (e.g., by “Not Started”, “In Progress”, “Completed”)
-- Input validation (e.g., required title field)
-- Kanban view toggle
-- TypeScript across both frontend and backend for stronger typing
-- Persistent storage with PostgreSQL via Prisma ORM
 
 ### Example **POST /tasks** Request
 
@@ -129,17 +121,29 @@ todo-list-app/
 
 ### 🔮 Future Enhancements
 
-✅ User authentication (JWT) and multiple users
+✅ User Authentication – Implement JWT-based login to support multiple users.
 
-🕒 Task deadlines and reminders
+🕒 Task Deadlines & Reminders – Add due dates with optional notifications.
 
-📱 Mobile-friendly layout
+📱 Mobile-Friendly Layout – Ensure responsive design for all screen sizes.
 
-☁️ Cloud deployment (Render, Railway, or Vercel)
+☁️ Cloud Deployment – Deploy reliably using platforms like Render, Railway, or Vercel.
 
-🔍 Search and sorting capabilities
+🔍 Search & Sorting – Allow tasks to be searched and sorted by status, title, or date.
 
-📊 Task activity tracking
+📊 Task Activity Tracking – Monitor task progress and completion over time.
+
+⚡ Advanced Task Management
+
+Add, delete, and edit tasks directly from the interface
+
+Filtering by status (e.g., “Not Started”, “In Progress”, “Completed”)
+
+Input validation (e.g., enforce required fields like task title)
+
+Kanban-style board toggle for visual task management
+
+📝 Stronger Typing – Introduce TypeScript across frontend and backend for safer, more maintainable code.
 
 ## ⚙️ Setup Instructions
 
@@ -173,7 +177,7 @@ npx prisma migrate dev --name init
 npm run dev
 ```
 
-The API will start at `http://localhost:5000`
+The API will start at `http://localhost:4000`
 
 ### 3. Frontend Setup
 
