@@ -13,9 +13,11 @@ Please refer local installation instructions below on how to set it up on your l
 
 ## Live Demo
 
-- Backend is hosted on Render.com
+Please note as the demo version is hosted on free instances of the below services they will spin down with inactivity, which can delay requests by 2 minutes or more.
+
+- Backend is hosted on Render.com : `https://to-do-list-api-kh03.onrender.com/`
 - PostgreSQL database is hosted on Neon.tech
-- Front End is hosted on githubpages.com
+- Front End is hosted on [githubpages.com](https://docs.github.com/en/pages): `https://www.amalk.au/to-do-list-api/`
 
 ### 🏗️ Tech Stack
 
