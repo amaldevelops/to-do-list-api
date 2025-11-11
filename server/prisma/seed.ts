@@ -1,6 +1,7 @@
 // To seed this data to database `npx prisma db seed --preview-feature
 
 import { PrismaClient, TaskStatus } from "./generated/client.ts";
+import "dotenv/config";
 
 const prisma = new PrismaClient();
 
