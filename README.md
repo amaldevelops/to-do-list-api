@@ -7,7 +7,7 @@ This project showcases RESTful API design, database integration, and a responsiv
 
 ## Source Code
 
-`https://github.com/amaldevelops/to-do-list-api`
+[Source Code](https://github.com/amaldevelops/to-do-list-api)
 
 Please refer local installation instructions below on how to set it up on your local machine. Since this was developed using a Linux machine instructions may differ from your operating system.
 
@@ -15,9 +15,9 @@ Please refer local installation instructions below on how to set it up on your l
 
 Please note as the demo version is hosted on free instances of the below services they will spin down with inactivity, which can delay requests by 2 minutes or more.
 
-- `https://to-do-list-api-kh03.onrender.com/` : Backend is hosted on Render.com (as output is given using JSON, this can be tested using the browser or using postman if you wish to test all the http methods) i.e. `https://to-do-list-api-kh03.onrender.com/tasks`
-- PostgreSQL database is hosted on Neon.tech
-- Front End is hosted on [githubpages.com](https://docs.github.com/en/pages): `https://www.amalk.au/to-do-list-api/`
+- (https://to-do-list-api-kh03.onrender.com/) : Backend is hosted on Render.com (as output is given using JSON, this can be tested using the browser or using postman if you wish to test all the http methods) i.e. (https://to-do-list-api-kh03.onrender.com/tasks)
+- (https://neon.com/) PostgreSQL database is hosted on
+- (https://www.amalk.au/to-do-list-api/) : Front End is hosted on [githubpages.com](https://docs.github.com/en/pages):
 
 ### 🏗️ Tech Stack
 
@@ -50,7 +50,7 @@ This design ensures scalability, maintainability, and interoperability across di
 ### 🔌 API Endpoints
 
 API can be accessed using these endpoints
-i.e. : `https://to-do-list-api-kh03.onrender.com/tasks/7` using postman
+i.e. : (https://to-do-list-api-kh03.onrender.com/tasks/7) using postman to update or delete tasks PUT/DELETE
 
 | Method   | Endpoint     | Description                              |
 | -------- | ------------ | ---------------------------------------- |
@@ -58,6 +58,28 @@ i.e. : `https://to-do-list-api-kh03.onrender.com/tasks/7` using postman
 | `POST`   | `/tasks`     | Create a new task                        |
 | `PUT`    | `/tasks/:id` | Update task details or mark as completed |
 | `DELETE` | `/tasks/:id` | Delete a specific task                   |
+
+### Example **POST /tasks** Request
+
+```json
+{
+  "title": "Write documentation",
+  "description": "Add setup guide and API docs",
+  "status": "Not Started"
+}
+```
+
+### 📊 Example Task Object
+
+```json
+{
+  "id": 1,
+  "title": "Learn Prisma ORM",
+  "description": "Read documentation and try CRUD examples",
+  "status": "In Progress",
+  "createdAt": "2025-11-05T12:30:00.000Z"
+}
+```
 
 ### PostgreSQL setup
 
@@ -74,16 +96,7 @@ i.e. : `https://to-do-list-api-kh03.onrender.com/tasks/7` using postman
 - Task list view displaying task ID, title, description, and status
 - Basic statistics: total tasks, completed percentage, etc.
 - Responsive, simple, and intuitive interface
-
-### Example **POST /tasks** Request
-
-```json
-{
-  "title": "Write documentation",
-  "description": "Add setup guide and API docs",
-  "status": "Not Started"
-}
-```
+- Developed using React
 
 ### Project folder structure
 
@@ -105,18 +118,6 @@ todo-list-app/
 │ └── package.json
 │
 └── README.md
-```
-
-### 📊 Example Task Object
-
-```json
-{
-  "id": 1,
-  "title": "Learn Prisma ORM",
-  "description": "Read documentation and try CRUD examples",
-  "status": "In Progress",
-  "createdAt": "2025-11-05T12:30:00.000Z"
-}
 ```
 
 ### 🔮 Future Enhancements
@@ -145,7 +146,7 @@ Kanban-style board toggle for visual task management
 
 📝 Stronger Typing – Introduce TypeScript across frontend and backend for safer, more maintainable code.
 
-## ⚙️ Setup Instructions
+## ⚙️ Local Setup Instructions
 
 ### 1. Clone the Repository
 
