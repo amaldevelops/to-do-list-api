@@ -1,8 +1,5 @@
-// This is your Prisma schema file,
+// This is Prisma schema file which will be reflected in the postgreSQL database,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
   provider = "prisma-client"
@@ -12,4 +9,21 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+enum TaskStatus {
+  not_started
+  started
+  complete
+  deleted
+}
+
+model Task {
+  task_id          Int        @id @default(autoincrement())
+  task_title       String
+  task_description String? 
+  task_status      TaskStatus @default(not_started)
+  task_owner       String
+  created_at       DateTime   @default(now())
+  updated_at       DateTime   @updatedAt
 }
