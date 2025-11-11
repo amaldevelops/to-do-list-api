@@ -1,8 +1,6 @@
 import "dotenv/config"; // load DATABASE_URL
 
-import { PrismaClient } from "./prisma/generated/client.ts";
-import "dotenv/config";
-
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 // fetches all tasks
