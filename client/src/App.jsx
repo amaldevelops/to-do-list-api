@@ -60,6 +60,7 @@ function App() {
 
       {/* Task List */}
       <div className="tasks">
+        <h1>Tasks</h1>
         {loading && <p>Loading tasks...</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}
         {!loading && !error && tasks.length === 0 && <p>No tasks found</p>}
@@ -67,9 +68,10 @@ function App() {
           <ul>
             {tasks.map((task) => (
               <li key={task.task_id}>
-                <strong>{task.task_title}</strong> -{" "}
-                {task.task_description || "No description"} -{" "}
-                <em>{task.task_status}</em>
+                <strong>Task ID: {task.task_id} | </strong>{" "}
+                <strong>Task Title: {task.task_title} | </strong>{" "}
+                {task.task_description || "No description"} |{" "}
+                <em>Task Status: {task.task_status}</em>
               </li>
             ))}
           </ul>
@@ -78,7 +80,7 @@ function App() {
 
       {/* Tech Stack */}
       <div>
-        <p>Front End Tech Stack</p>
+        <h3>Front End Tech Stack</h3>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
