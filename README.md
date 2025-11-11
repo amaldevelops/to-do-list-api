@@ -9,6 +9,8 @@ This project showcases RESTful API design, database integration, and a responsiv
 
 `https://github.com/amaldevelops/to-do-list-api`
 
+Please refer local installation instructions below on how to set it up on your local machine. Since this was developed using a Linux machine instructions may differ from your operating system.
+
 ## Live Demo
 
 ### 🏗️ Tech Stack
@@ -41,12 +43,24 @@ This design ensures scalability, maintainability, and interoperability across di
 
 ### 🔌 API Endpoints
 
+API can be accessed using these endpoints
+
 | Method   | Endpoint     | Description                              |
 | -------- | ------------ | ---------------------------------------- |
 | `GET`    | `/tasks`     | Fetch all tasks                          |
 | `POST`   | `/tasks`     | Create a new task                        |
 | `PUT`    | `/tasks/:id` | Update task details or mark as completed |
 | `DELETE` | `/tasks/:id` | Delete a specific task                   |
+
+### PostgreSQL setup
+
+- task_id : Auto-incremented unique identifier (SERIAL PRIMARY KEY) as an validation
+- task_title : Title of the task (VARCHAR(255)), cannot be null as an validation.
+- task_description : Optional detailed description of the task (TEXT).
+- task_status : Current status of the task (task_status_enum), defaults to not-started. Possible values: `not-started | started | complete | deleted`
+- task_owner : Owner or creator of the task (VARCHAR(255)), cannot be null as an validation.
+- created_at: Timestamps for task creation, defaulting to the current time.
+- updated_at: Timestamps for task last update, defaulting to the current time.
 
 ### 💻 Frontend Information
 
@@ -109,7 +123,7 @@ todo-list-app/
 
 ### 🔮 Future Enhancements
 
-✅ User authentication (JWT)
+✅ User authentication (JWT) and multiple users
 
 🕒 Task deadlines and reminders
 
@@ -128,6 +142,7 @@ todo-list-app/
 ```bash
 git clone git@github.com:amaldevelops/to-do-list-api.git
 cd to-do-list-api
+npm install
 ```
 
 ### 2. Backend Setup
