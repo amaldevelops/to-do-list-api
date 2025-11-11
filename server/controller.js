@@ -16,10 +16,10 @@ async function controllerGetAllTasks(req, res, next) {
   try {
     console.log("All Tasks Get Route Reached");
     const response = await getAllTasks();
-    res.json([{ allTasks: response }]);
+    res.json({ tasks: response || [] });
   } catch (error) {
     console.error(error);
-    res.json([{ error: "Error retrieving all tasks" }]);
+    res.status(500).json({ error: "Error retrieving all tasks" });
   }
 }
 
