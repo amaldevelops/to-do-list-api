@@ -1,5 +1,8 @@
 import {
   getAllTasks,
+  createTask,
+  updateTask,
+  deleteTask,
   getTaskById,
   getTasksByStatus,
   getTasksSortedByCreation,
